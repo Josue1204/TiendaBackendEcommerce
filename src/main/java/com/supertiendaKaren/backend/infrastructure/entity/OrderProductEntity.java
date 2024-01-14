@@ -12,12 +12,12 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "order_products")
-public class OrdeProductEntity {
+public class OrdenProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private BigDecimal quantity;
     private BigDecimal price;
-    @OneToMany
-    private ProductEntity productId;
+    @ManyToOne
+    private OrderEntity orderEntity;
 }
